@@ -14,6 +14,7 @@ function Effect() {
        `http://api.openweathermap.org/data/2.5/weather?q=${locations}&APPID={API_KEY_FOR_WEATHER_API}&units=metric`
     )
 
+    // For error or bad response
     .then((res) => {
       if(res.ok) {
         console.log(res.status);
@@ -27,6 +28,11 @@ function Effect() {
         alert("Error!");
         throw new Error("You have an error");
       }
+    })
+
+    // for approved
+    .then(() => {
+
     })
   }
 
