@@ -10,7 +10,13 @@ function Effect() {
   });
 
   return (
-    <div>Effect</div>
+    <div>
+      <button onClick={setType("Zeus")}>Zeus</button>
+      <button onClick={setType("Poseidon")}>Poseidon</button>
+      <button onClick={setType("Hades")}>Hades</button>
+
+      <h1>{type}</h1>
+    </div>
   )
 }
 
