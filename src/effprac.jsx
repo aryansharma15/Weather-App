@@ -4,14 +4,14 @@ import React, { useEffect, useState } from 'react'
 function Effprac() {
     
     const[type, setType] = useState("Zeus");
-
-    console.log("render");
+    const[items, setItems] = useState([]);
+    
 
     useEffect(()=>{
         fetch(`https://jsonplaceholder.typicode.com/${type}`)
         .then(response => response.json())
-        .then(json => console.log(json))
-    });
+        .then(json => setItems(json))
+    }, [type]);
 
   return (
     <div>
@@ -20,6 +20,12 @@ function Effprac() {
         <button onClick={() => setType("comments")}>Hades</button>
 
         <h1>{type}</h1>
+
+        <div>
+            {items.map(item => {
+                return <pre>{JSON.stringify(item)}</pre>
+            })}
+        </div>
     </div>
   )
 }
