@@ -61,9 +61,27 @@ function Effect() {
   });
 
   return (
-    <div>
 
-      <h1>{type}</h1>
+    // Remake
+    <div className="app">
+      <div className="wrapper">
+        <div className="search">
+          <input
+            type="text"
+            value={locations}
+            onChange={(e) => setLocations(e.target.value)}
+            placeholder="Enter location"
+            className="location_input"
+          />
+          <button className="location_searcher" onClick={ifClicked}>
+            Search Location
+          </button>
+        </div>
+        <div className="app__data">
+          <p className="temp">Current Temparature: {weather?.main?.temp}</p>
+        </div>
+        <img className="app__image" src={photos} alt="" />
+      </div>
     </div>
   )
 }
