@@ -11,7 +11,7 @@ function Effect() {
 
   function Loc() {
     fetch(
-       `http://api.openweathermap.org/data/2.5/weather?q=${locations}&APPID={API_KEY_FOR_WEATHER_API}&units=metric`
+       `http://api.openweathermap.org/data/2.5/weather?q=${locations}&APPID={b7afd6bc9f20f797aa046894cfc772d0}&units=metric`
     )
 
       // For error or bad response
@@ -31,14 +31,15 @@ function Effect() {
       })
 
       // for approved
-      .then(() => {
-        setWeather(object);
+      .then((data) => {
+        console.log(data)
+        setWeather(data);
         console.log(weather);
       })
       .catch((error) => console.log(error));
 
     fetch(
-      `https://api.unsplash.com/search/photos?query=${locations}&client_id={API_KEY_FOR_UNSPLASH}`
+      `https://api.unsplash.com/search/photos?query=${locations}&client_id={b7afd6bc9f20f797aa046894cfc772d0}`
     )
       .then((res) => {
         if(res.ok){
@@ -73,14 +74,14 @@ function Effect() {
             placeholder="Enter location"
             className="location_input"
           />
-          <button className="location_searcher" onClick={ifClicked}>
+          <button className="location_searcher" onClick={Loc}>
             Search Location
           </button>
         </div>
         <div className="app__data">
           <p className="temp">Current Temparature: {weather?.main?.temp}</p>
         </div>
-        <img className="app__image" src={photos} alt="" />
+        <img className="app__image" src={landscape} alt="" />
       </div>
     </div>
   )

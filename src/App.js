@@ -6,8 +6,8 @@ import Effprac from './effprac';
 function App() {
   return (
     <div className="App">
-      {/* <Effect></Effect> */}
-      <Effprac></Effprac>
+      <Effect></Effect>
+      {/* <Effprac></Effprac> */}
     </div>
   );
 }
