@@ -11,7 +11,7 @@ function Effect() {
 
   function Loc() {
     fetch(
-       `http://api.openweathermap.org/data/2.5/weather?q=${locations}&APPID={b7afd6bc9f20f797aa046894cfc772d0}&units=metric`
+       `http://api.openweathermap.org/data/2.5/weather?q=${locations}&APPID=b7afd6bc9f20f797aa046894cfc772d0&units=metric`
     )
 
       // For error or bad response
@@ -39,7 +39,7 @@ function Effect() {
       .catch((error) => console.log(error));
 
     fetch(
-      `https://api.unsplash.com/search/photos?query=${locations}&client_id={b7afd6bc9f20f797aa046894cfc772d0}`
+      `https://api.unsplash.com/search/photos?query=${locations}&client_id=b7afd6bc9f20f797aa046894cfc772d0`
     )
       .then((res) => {
         if(res.ok){
