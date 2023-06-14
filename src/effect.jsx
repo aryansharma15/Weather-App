@@ -79,7 +79,7 @@ function Effect() {
           </button>
         </div>
         <div className="app__data">
-          <p className="temp">Current Temparature: {weather?.main?.temp} deg C</p>
+          <p className="temp">Current Temparature: {weather?.main?.temp}{"° C"} </p>
         </div>
         <img className="app__image" src={landscape} alt="" />
       </div>
