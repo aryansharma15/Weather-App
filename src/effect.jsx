@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 
 function Effect() {
-
-  const [type, setType] = useState("Zeus")
   
   const [weather, setWeather] = useState({});
   const [locations, setLocations] = useState("Madrid");
